@@ -1,0 +1,9 @@
+آبی ملایم (Primary Blue): #4A90E2
+خاکستری روشن (Light Gray): #F5F7FA
+خاکستری متوسط (Medium Gray): #B0B8C1
+سبز برای وضعیت “انجام شده” (Done Green): #27AE60
+زرد برای وضعیت “In Progress” (In-progress Yellow): #F1C40F
+قرمز برای وضعیت “اولویت بالا” (Priority Red): #E74C3C
+سفید برای پس‌زمینه‌ها و فضاهای سفید: #FFFFFF
+سیاه/خاکستری تیره برای متن‌ها (Dark Text): #2C3E50
+خاکستری متوسط (Medium Gray): #6B7280
