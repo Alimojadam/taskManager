@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../Context/UseUser";
+import type { User } from "../../info/userInfo";
 
 
 
 const Login=()=>{
-    interface User{
-        name: string;
-        email: string;
-        pass: string;
-    }
+
+    const { setUser } = useUser();
+
     interface Toast {
         message: string; 
         type: "success" | "error" | ""
@@ -41,6 +41,8 @@ const Login=()=>{
         );
 
         if (foundUser) {
+            setUser(foundUser)
+            localStorage.setItem("currentUser", JSON.stringify(foundUser));
             showToast(`ورود موفق! خوش آمدید ${foundUser.name}`, "success");
             setTimeout(() => Loginnavigate("/dashboard"), 2000);
         } else {
@@ -64,7 +66,7 @@ const Login=()=>{
                     e.preventDefault();
                     handleLogin();
                 }
-            }    className="w-[50%] flex flex-col justify-center items-center gap-5">
+            }    className="w-[40%] flex flex-col justify-center items-center gap-5">
                 <div className="flex justify-center items-center text-[40px]">
                     <div className="w-[75px] h-[75px]">
                         <img src="src/assets/Logo.png" alt="" />

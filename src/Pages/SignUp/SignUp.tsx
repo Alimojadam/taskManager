@@ -1,16 +1,10 @@
 import { useState } from "react";
 import { users } from "../../info/userInfo";
 import { useNavigate } from "react-router-dom";
-
+import type { User } from "../../info/userInfo";
 
 
 const SignUp=()=>{
-
-    interface User{
-        name: string;
-        email: string;
-        pass: string;
-    }
 
     interface Toast {
         message: string; 
@@ -80,7 +74,7 @@ const SignUp=()=>{
                     e.preventDefault();
                     handleSignUp();
                 }
-            }    className="w-[50%] flex flex-col justify-center items-center gap-5">
+            }    className="w-[40%] flex flex-col justify-center items-center gap-5">
                 <div className="flex justify-center items-center text-[40px]">
                     <div className="w-[75px] h-[75px]">
                         <img src="src/assets/Logo.png" alt="" />
