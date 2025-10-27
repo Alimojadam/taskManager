@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import MainDashboard from "./MainDashboard";
+import Task from "../Task/Task";
 
 
 
@@ -19,13 +20,14 @@ const Dashboard=()=>{
     ]
 
     const [isActive , setIsActive]= useState<number>(0);
+    const [selectedTaskId , setSelectedTaskId]= useState<number | null>(null)
 
     return(
         <div className="w-full flex flex-col">
             <div className="w-full">
                 <Navbar/>
             </div>
-            <div className="flex flex-row-reverse justify-between items-center">
+            <div className="flex flex-row-reverse justify-between items-start">
                 <ul className="min-h-[80vh] w-[20%] rounded-[5px] flex flex-col gap-4 border-l-[1px] border-b-[1px] border-t-[1px] border-[#B0B8C1] justify-start items-end px-4 py-3">
                     {menu.map((item,index)=>{
                         return(
@@ -37,7 +39,12 @@ const Dashboard=()=>{
                     })}
                 </ul>
                 <div className="min-h-[80vh] w-[80%]">
-                    {isActive===0 && <MainDashboard/>}
+                    {isActive === 0 && !selectedTaskId ? (
+                        <MainDashboard setSelectedTaskId={setSelectedTaskId} />
+                    ) : isActive === 0 && selectedTaskId ? (
+                        <Task taskId={selectedTaskId} setSelectedTaskId={setSelectedTaskId} />
+                    ) : null}
+
                 </div>
             </div>
         </div>

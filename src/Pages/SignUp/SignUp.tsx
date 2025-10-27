@@ -48,7 +48,7 @@ const SignUp=()=>{
             return;
             
         }
-        const newUser: User = { name, email, pass };
+        const newUser: User = { name, email, pass, tasksId: [], profilIMG: "" };
         users.push(newUser);
 
         localStorage.setItem("users", JSON.stringify(users));

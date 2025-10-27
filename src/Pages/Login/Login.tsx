@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../Context/UseUser";
-import type { User } from "../../info/userInfo";
+import { users as importedUsers, type User } from "../../info/userInfo";
 
 
 
@@ -27,28 +27,47 @@ const Login=()=>{
     const Loginnavigate=useNavigate();
     
     
+
     const handleLogin = (): void => {
 
         if (pass.length < 8) {
-            showToast("رمز عبور باید حداقل ۸ کاراکتر باشد!", "error")
+            showToast("رمز عبور باید حداقل ۸ کاراکتر باشد!", "error");
             return;
-         }
+        }
 
         const storedUsers: User[] = JSON.parse(localStorage.getItem("users") || "[]");
 
-        const foundUser = storedUsers.find(
-            (user) => user.email === email && user.pass === pass
-        );
+        const mergedUsers: User[] = importedUsers.map(importedUser => {
+            const existingUser = storedUsers.find(u => u.email === importedUser.email);
+            return existingUser ? { ...importedUser } : importedUser;
+        });
+
+        storedUsers.forEach(u => {
+            if (!mergedUsers.some(mu => mu.email === u.email)) {
+                mergedUsers.push(u);
+            }
+        });
+
+        const foundUser = mergedUsers.find(u => u.email === email && u.pass === pass);
 
         if (foundUser) {
-            setUser(foundUser)
-            localStorage.setItem("currentUser", JSON.stringify(foundUser));
-            showToast(`ورود موفق! خوش آمدید ${foundUser.name}`, "success");
-            setTimeout(() => Loginnavigate("/dashboard"), 2000);
+            const userWithTasks: User = {
+                ...foundUser,
+                tasksId: Array.isArray(foundUser.tasksId) ? foundUser.tasksId : [],
+            };
+
+            localStorage.setItem("users", JSON.stringify(mergedUsers));
+
+            localStorage.setItem("currentUser", JSON.stringify(userWithTasks));
+            setUser(userWithTasks);
+
+            showToast(`ورود موفق! خوش آمدید ${userWithTasks.name}`, "success");
+            setTimeout(() => Loginnavigate("/dashboard"), 1000);
         } else {
             showToast("ایمیل یا رمز عبور اشتباه است!", "error");
         }
     };
+
 
     const handleSignUpNavigate=():void=>{
 
