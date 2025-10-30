@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useUser } from "../Context/UseUser";
+import { useUser } from "../Context/userContext/UseUser";
 import { users as importedUsers, type User } from "../../info/userInfo";
 
 
