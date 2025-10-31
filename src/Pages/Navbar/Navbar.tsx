@@ -1,15 +1,15 @@
-// import { useUser } from "../Context/UseUser";
-import profilIMG from "./../../assets/profile.jpg"
+import { useUser } from "../Context/userContext/UseUser";
+
 
 
 
 const Navbar=()=>{
-    // const { user }= useUser();
+    const { user }= useUser();
     return(
         <div className="w-full flex flex-row-reverse justify-between shadow-sm shadow-[#F5F7FA] px-10 py-3 items-center m-0 p-0 border-b border-[#F5F7FA]">
             <div className="flex flex-row-reverse justify-center items-center gap-7">
                 <div className="w-[50px] h-[50px] rounded-[50%]">
-                    <img className="w-full h-full rounded-[50%]" src={profilIMG} alt="" />
+                    <img className="w-full h-full rounded-[50%]" src={user?.profilIMG || "src/assets/profile.jpg"} alt="" />
                 </div>
                 <div className="">
                     <i className="bi bi-bell text-[#2C3E50] text-[18px] cursor-pointer" aria-hidden="true"></i>
