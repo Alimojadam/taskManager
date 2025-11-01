@@ -82,7 +82,7 @@ const AddTask: React.FC<AddTaskProps> = ({ setIsOpen, showToast }) => {
                         type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
-                        className="w-[450px] outline-none bg-transparent border border-[#B0B8C1] rounded-md px-2 py-1 text-[14px] text-[#2C3E50]"
+                        className="w-full max-w-[450px] outline-none bg-transparent border border-[#B0B8C1] rounded-md px-2 py-1 text-[14px] text-[#2C3E50]"
                     />
                 </div>
 
@@ -91,7 +91,7 @@ const AddTask: React.FC<AddTaskProps> = ({ setIsOpen, showToast }) => {
                     <textarea
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
-                        className="w-[450px] outline-none bg-transparent resize-none h-[100px] border border-[#B0B8C1] rounded-md px-2 py-1 text-[14px] text-[#2C3E50]"
+                        className="w-full max-w-[450px] outline-none bg-transparent resize-none h-[100px] border border-[#B0B8C1] rounded-md px-2 py-1 text-[14px] text-[#2C3E50]"
                     />
                 </div>
 
@@ -105,7 +105,7 @@ const AddTask: React.FC<AddTaskProps> = ({ setIsOpen, showToast }) => {
                             setDueDate(val);
                         }}
                         placeholder="روز-ماه-سال"
-                        className="w-[450px] outline-none bg-transparent border border-[#B0B8C1] rounded-md px-2 py-1 text-[14px] text-[#2C3E50]"
+                        className="w-full max-w-[450px] outline-none bg-transparent border border-[#B0B8C1] rounded-md px-2 py-1 text-[14px] text-[#2C3E50]"
                     />
                 </div>
 

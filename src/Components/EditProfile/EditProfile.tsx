@@ -69,7 +69,7 @@ const EditProfile: React.FC<EditProfileProps> = ({ setIsOpen, showToast }) => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-[450px] outline-none bg-transparent border border-[#B0B8C1] rounded-md px-2 py-1 text-[14px] text-[#2C3E50]"
+            className="w-full max-w-[450px] outline-none bg-transparent border border-[#B0B8C1] rounded-md px-2 py-1 text-[14px] text-[#2C3E50]"
           />
         </div>
 
@@ -79,7 +79,7 @@ const EditProfile: React.FC<EditProfileProps> = ({ setIsOpen, showToast }) => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-[450px] outline-none bg-transparent border border-[#B0B8C1] rounded-md px-2 py-1 text-[14px] text-[#2C3E50]"
+            className="w-full max-w-[450px] outline-none bg-transparent border border-[#B0B8C1] rounded-md px-2 py-1 text-[14px] text-[#2C3E50]"
           />
         </div>
 

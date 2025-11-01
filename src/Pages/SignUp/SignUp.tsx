@@ -68,7 +68,7 @@ const SignUp = () => {
           e.preventDefault();
           handleSignUp();
         }}
-        className="w-[40%] flex flex-col justify-center items-center gap-5"
+        className="w-full lg:w-[40%] flex flex-col justify-center items-center gap-5"
       >
         <div className="flex justify-center items-center text-[40px]">
           <div className="w-[75px] h-[75px]">
@@ -156,7 +156,7 @@ const SignUp = () => {
       {toast.message && (
         <div
           dir="rtl"
-          className={`fixed top-10 left-1/2 -translate-x-1/2 transform text-white px-6 py-3 rounded-2xl shadow-lg text-lg transition-all duration-300 ${
+          className={`fixed top-10 left-1/2 -translate-x-1/2 transform text-white px-4 sm:px-6 py-3 rounded-2xl shadow-lg text-lg transition-all duration-300 ${
             toast.type === "success" ? "bg-green-500/80" : "bg-red-500/80"
           }`}
         >

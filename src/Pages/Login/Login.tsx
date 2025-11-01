@@ -56,7 +56,7 @@ const Login = () => {
 
   return (
     <div className="w-full min-h-[90vh] flex justify-center items-center overflow-hidden">
-      <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }} className="w-[40%] flex flex-col justify-center items-center gap-5">
+      <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }} className="w-full lg:w-[40%] flex flex-col justify-center items-center gap-5">
         <div className="flex justify-center items-center text-[40px]">
           <div className="w-[75px] h-[75px]">
             <img src="src/assets/Logo.png" alt="" />
@@ -102,7 +102,7 @@ const Login = () => {
       </form>
       {toast.message && (
         <div dir="rtl"
-          className={`fixed top-10 left-1/2 -translate-x-1/2 transform text-white px-6 py-3 rounded-2xl shadow-lg text-lg transition-all duration-300 ${toast.type === "success" ? "bg-green-500/80" : "bg-red-500/80"}`}>
+          className={`fixed top-10 left-1/2 -translate-x-1/2 transform text-white px-4 lg:px-6 py-3 rounded-2xl shadow-lg text-lg transition-all duration-300 ${toast.type === "success" ? "bg-green-500/80" : "bg-red-500/80"}`}>
           {toast.message}
         </div>
       )}

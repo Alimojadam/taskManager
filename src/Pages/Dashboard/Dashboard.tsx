@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import MainDashboard from "./MainDashboard";
 import Task from "../Task/Task";
@@ -26,6 +26,7 @@ const Dashboard=()=>{
 
     const {setUser}= useUser()
     const [isActive , setIsActive]= useState<number>(0);
+    const [isOpen, setIsOpen] = useState(false);
     const [selectedTaskId , setSelectedTaskId]= useState<number | null>(null)
     const navigate=useNavigate();
 
@@ -33,17 +34,25 @@ const Dashboard=()=>{
         setUser(null);
         navigate("/")
     }
+    useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [isOpen]);
 
     return(
-        <div className="w-full flex flex-col">
+        <div className="relative w-full flex flex-col">
             <div className="w-full">
-                <Navbar/>
+                <Navbar setIsOpen={setIsOpen} isOpen={isOpen}/>
             </div>
             <div className="flex flex-row-reverse justify-between items-start">
-                <ul className="min-h-screen h-auto w-[20%] rounded-[5px] flex flex-col gap-4 border-l-[1px] border-b-[1px] border-t-[1px] border-[#B0B8C1] justify-start items-end px-4 py-3">
+                <ul className={`${isOpen ? "w-[95%] backdrop-blur-lg" : "w-0"} fixed lg:relative overflow-hidden min-h-[90vh] lg:min-h-screen h-auto lg:w-[20%] rounded-[5px] flex flex-col gap-4 border-l-[1px] border-b-[1px] border-t-[1px] border-[#B0B8C1] z-[9999] lg:z-0 justify-start items-end lg:px-4 lg:py-3 transition-all ease-in-out duration-300`}>
                     {menu.map((item,index)=>{
                         return(
-                            <li onClick={()=>setIsActive(index)} key={index} className={`${isActive === index ? "bg-[#E9EDF3]" : "bg-transparent"} w-full px-3 py-1 rounded-md cursor-pointer flex justify-end gap-3 text-[#2C3E50] transition-all duration-300 ease-in-out`}>
+                            <li onClick={()=>{setIsActive(index);setIsOpen(false);}} key={index} className={`${isActive === index ? "bg-[#E9EDF3]" : "bg-transparent"} w-full px-3 py-1 rounded-md cursor-pointer flex justify-end gap-3 text-[#2C3E50] transition-all duration-300 ease-in-out`}>
                                 <p>{item.name}</p>
                                 <i className={`${item.icon}`}></i>
                             </li>
@@ -55,7 +64,7 @@ const Dashboard=()=>{
                         <i className="bi bi-box-arrow-right"></i>
                     </li>
                 </ul>
-                <div className="min-h-[80vh] w-[80%]">
+                <div className="min-h-[80vh] w-full px-5 lg:px-0 lg:w-[80%]">
                     {isActive === 0 && !selectedTaskId ? (
                         <MainDashboard setSelectedTaskId={setSelectedTaskId} />
                     ) : isActive === 0 && selectedTaskId ? (

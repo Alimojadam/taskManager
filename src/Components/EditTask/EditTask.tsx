@@ -49,7 +49,7 @@ const EditTask = ({ task, setIsOpen, showToast }: EditTaskProps) => {
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-[450px] outline-none bg-transparent resize-none h-[100px] border border-[#B0B8C1] rounded-md px-2 py-1 text-[14px] text-[#2C3E50]"
+            className="w-[400px] lg:w-[450px] outline-none bg-transparent resize-none h-[100px] border border-[#B0B8C1] rounded-md px-2 py-1 text-[14px] text-[#2C3E50]"
           />
         </div>
         <div className="w-full flex flex-col justify-start items-start gap-2 mt-5">
@@ -61,7 +61,7 @@ const EditTask = ({ task, setIsOpen, showToast }: EditTaskProps) => {
             id="dueDate"
             value={diary}
             placeholder="روز-ماه-سال"
-            className="w-[450px] outline-none bg-transparent resize-none border border-[#B0B8C1] rounded-md px-2 py-1 text-[14px] text-[#2C3E50]"
+            className="w-[400px] lg:w-[450px] outline-none bg-transparent resize-none border border-[#B0B8C1] rounded-md px-2 py-1 text-[14px] text-[#2C3E50]"
             onChange={(e) => setDiary(e.target.value)}
           />
         </div>
