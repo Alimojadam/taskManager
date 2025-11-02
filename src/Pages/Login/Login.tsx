@@ -59,7 +59,7 @@ const Login = () => {
       <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }} className="w-full lg:w-[40%] flex flex-col justify-center items-center gap-5">
         <div className="flex justify-center items-center text-[40px]">
           <div className="w-[75px] h-[75px]">
-            <img src="src/assets/Logo.png" alt="" />
+            <img src="/assets/Logo.png" alt="" />
           </div>
           <h1 className="text-[#4A90E2] font-bold">TaskFlow</h1>
         </div>
