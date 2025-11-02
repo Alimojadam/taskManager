@@ -20,7 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsOpen, isOpen }) => {
             }
             <div className="flex flex-row-reverse justify-center items-center gap-7 mr-7 lg:mr-0">
                 <div className="w-[50px] h-[50px] rounded-[50%]">
-                    <img className="w-full h-full rounded-[50%]" src={user?.profilIMG || "src/assets/profile.jpg"} alt="" />
+                    <img className="w-full h-full rounded-[50%]" src={user?.profilIMG || "src/assets/user.png"} alt="" />
                 </div>
                 <div className="">
                     <i className="bi bi-bell text-[#2C3E50] text-[18px] cursor-pointer" aria-hidden="true"></i>

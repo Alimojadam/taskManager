@@ -26,7 +26,7 @@ const Dashboard=()=>{
 
     const {setUser}= useUser()
     const [isActive , setIsActive]= useState<number>(0);
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
     const [selectedTaskId , setSelectedTaskId]= useState<number | null>(null)
     const navigate=useNavigate();
 

@@ -40,7 +40,7 @@ const SignUp = () => {
     const foundUser = storedUsers.find((user) => user.email === email);
 
     if (foundUser) {
-      showToast(`این حساب کاربری وجود دارد!`, "error");
+      showToast(`این حساب کاربری وجود ندارد!`, "error");
       return;
     }
 

@@ -1,5 +1,4 @@
 import { useState, type JSX } from "react";
-// import { tasks } from "../../info/TaskInfo";
 import Modal from "../../Modal/Modal";
 import ChangeStatus from "../../Components/ChangeStatus/ChangeStatus";
 import DeleteTask from "../../Components/DeleteTask/DeleteTask";
@@ -29,7 +28,7 @@ const Task: React.FC<TaskProps> = ({ taskId, setSelectedTaskId }) => {
 
   if (!task) return <p>تسک یافت نشد.</p>;
 
-  const openModal = (content: JSX.Element) => {
+  const openModal = (content: JSX.Element):void => {
     setModalContent(content);
     setIsOpen(true);
   };
@@ -39,21 +38,21 @@ const Task: React.FC<TaskProps> = ({ taskId, setSelectedTaskId }) => {
   };
 
   return (
-    <div className="w-full px-10 py-10 flex flex-col justify-center items-start gap-7">
-      <div className="w-full flex flex-row-reverse justify-between items-start">
+    <div className="w-full lg:px-10 py-10 flex flex-col justify-center items-start gap-10 lg:gap-7">
+      <div className="w-full flex flex-row-reverse justify-between items-center lg:items-start">
         <p className="text-[#2C3E50] text-[28px] font-semibold">{task.title}</p>
         <p onClick={() => setSelectedTaskId(null)} className="text-[#6B7280] flex justify-center items-start gap-1 cursor-pointer">
           <i className="bi bi-arrow-left"></i>
           <span>بازگشت</span>
         </p>
       </div>
-      <div className="w-full flex flex-row-reverse justify-start items-start gap-10">
+      <div className="w-full flex flex-col lg:flex-row-reverse justify-start items-end lg:items-start gap-7 lg:gap-10">
         <div className="flex flex-row-reverse justify-center items-center gap-3">
           <p dir="rtl" className="flex justify-center items-start gap-2">
             <i className="bi bi-grid text-[#6B7280] text-xl"></i>
             <span className="text-[#6B7280]">وضعیت :</span>
           </p>
-          <span className="text-[13px] text-[#2C3E50] bg-[#B0B8C1] px-4 py-1 rounded-lg">
+          <span className="text-[14px] lg:text-[13px] text-[#2C3E50] bg-[#B0B8C1] px-2 py-[2px] lg:px-4 lg:py-1 rounded-lg">
             {task.status === "pending" ? "در انتظار" : task.status === "in-progress" ? "در حال انجام" : "تکمیل شده"}
           </span>
         </div>
@@ -78,7 +77,7 @@ const Task: React.FC<TaskProps> = ({ taskId, setSelectedTaskId }) => {
       </div>
       <div className="w-full flex flex-col justify-start items-end gap-3">
         <p className="text-[#2C3E50] text-[18px]">توضیحات</p>
-        <p dir="rtl" className="text-[#6B7280] text-[15px] text-justify">{task.description}</p>
+        <p dir="rtl" className="text-[#6B7280] text-[15px] text-justify leading-[2]">{task.description}</p>
       </div>
       <div className="w-full flex justify-end items-start gap-4 mt-4">
         <div
@@ -116,7 +115,7 @@ const Task: React.FC<TaskProps> = ({ taskId, setSelectedTaskId }) => {
       {/* Toast */}
         {toast.message && (
           <div dir="rtl"
-            className={`fixed top-10 left-1/2 -translate-x-1/2 transform text-white px-6 py-3 rounded-2xl shadow-lg text-lg transition-all duration-300 ${
+            className={`fixed top-10 left-1/2 -translate-x-1/2 transform text-white px-4 lg:px-6 py-3 rounded-2xl shadow-lg text-lg transition-all duration-300 ${
               toast.type === "success" ? "bg-green-500/80" : "bg-red-500/80"
               }`}
               >

@@ -10,11 +10,11 @@ interface EditProfileProps {
 const EditProfile: React.FC<EditProfileProps> = ({ setIsOpen, showToast }) => {
   const { user, setUser } = useUser();
 
-  const [name, setName] = useState(user?.name || "");
-  const [email, setEmail] = useState(user?.email || "");
-  const [profilIMG, setProfilIMG] = useState(user?.profilIMG || "");
+  const [name, setName] = useState<string>(user?.name || "");
+  const [email, setEmail] = useState<string>(user?.email || "");
+  const [profilIMG, setProfilIMG] = useState<string>(user?.profilIMG || "");
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>):void => {
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -23,7 +23,7 @@ const EditProfile: React.FC<EditProfileProps> = ({ setIsOpen, showToast }) => {
     reader.readAsDataURL(file);
   };
 
-  const handleSave = (e: React.FormEvent) => {
+  const handleSave = (e: React.FormEvent):void => {
     e.preventDefault();
 
     if (!name.trim()) {

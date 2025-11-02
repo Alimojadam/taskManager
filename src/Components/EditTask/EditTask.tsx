@@ -11,8 +11,8 @@ interface EditTaskProps {
 const EditTask = ({ task, setIsOpen, showToast }: EditTaskProps) => {
   const { updateTask } = useTasks();
 
-  const [description, setDescription] = useState(task.description);
-  const [diary, setDiary] = useState(task.diary);
+  const [description, setDescription] = useState<string>(task.description);
+  const [diary, setDiary] = useState<string>(task.diary);
   const [selectedPriority, setSelectedPriority] = useState<Task["priority"]>(task.priority);
 
   const priorityLabels: Record<"low" | "medium" | "high", string> = {

@@ -7,7 +7,7 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
-  const [show, setShow] = useState(isOpen);
+  const [show, setShow] = useState<boolean>(isOpen);
 
   useEffect(() => {
     if (isOpen) {

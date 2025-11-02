@@ -18,10 +18,10 @@ const Settings = () => {
     message: "",
     type: "",
   });
-  const [isActiveEmail, setIsActiveEmail] = useState(false);
-  const [isActiveApp, setIsActiveApp] = useState(false);
+  const [isActiveEmail, setIsActiveEmail] = useState<boolean>(false);
+  const [isActiveApp, setIsActiveApp] = useState<boolean>(false);
 
-  const openModal = (content: JSX.Element) => {
+  const openModal = (content: JSX.Element):void => {
     setModalContent(content);
     setIsOpen(true);
   };
@@ -32,10 +32,10 @@ const Settings = () => {
   };
 
   const languages: string[] = ["فارسی", "English", "العربية", "Türkçe"];
-  const [selectedLang, setSelectedLang] = useState("فارسی");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedLang, setSelectedLang] = useState<string>("فارسی");
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
-  const handleSelect = (lang: string) => {
+  const handleSelect = (lang: string):void => {
     setSelectedLang(lang);
     setIsDropdownOpen(false);
     localStorage.setItem("selectedLanguage", lang);
@@ -60,7 +60,7 @@ const Settings = () => {
         <div className="w-full flex flex-row-reverse justify-start items-start gap-5">
           <div className="w-[80px] h-[80px] rounded-full">
             <img
-              src={user.profilIMG || "src/assets/profile.jpg"}
+              src={user.profilIMG || "src/assets/user.png"}
               alt=""
               className="w-full h-full rounded-full object-cover"
             />
@@ -92,7 +92,7 @@ const Settings = () => {
                   !..مدیریت نحوه دریافت اعلان ها
                 </p>
               </div>
-              <div className="w-[40%] flex flex-col justify-start items-start gap-5">
+              <div className="w-full lg:w-[40%] flex flex-col justify-start items-start gap-5">
                 <div className="w-full flex flex flex-row-reverse justify-between items-center">
                   <p className="text-[#2C3E50] text-[18px]">اعلان های ایمیل</p>
                   <button
@@ -187,7 +187,7 @@ const Settings = () => {
       {toast.message && (
         <div
           dir="rtl"
-          className={`fixed top-10 left-1/2 -translate-x-1/2 transform z-[9999] text-white px-6 py-3 rounded-2xl shadow-lg text-lg transition-all duration-300 ${
+          className={`fixed top-10 left-1/2 -translate-x-1/2 transform z-[9999] text-white px-4 lg:px-6 py-3 rounded-2xl shadow-lg text-lg transition-all duration-300 ${
             toast.type === "success" ? "bg-green-500/80" : "bg-red-500/80"
           }`}
         >

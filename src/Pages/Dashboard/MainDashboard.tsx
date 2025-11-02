@@ -4,7 +4,7 @@ import DeleteTask from "../../Components/DeleteTask/DeleteTask";
 import Modal from "../../Modal/Modal";
 import { useUser } from "../Context/userContext/UseUser";
 import { useTasks } from "../Context/TaskContext/useTasks";
-import AddTask from "../Task/AddTask/AddTask";
+import AddTask from "../../Components/AddTask/AddTask";
 
 interface MainDashboardProps {
   setSelectedTaskId: (id: number | null) => void;
@@ -27,16 +27,16 @@ const MainDashboard: React.FC<MainDashboardProps> = ({ setSelectedTaskId }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [toast, setToast] = useState<Toast>({ message: "", type: "" });
   const [selectedStatus, setSelectedStatus] = useState("pending");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
   const statuses = ["pending", "in-progress", "completed"] as const;
 
-  const handleNavigate = (taskId: number, e?: React.MouseEvent) => {
+  const handleNavigate = (taskId: number, e?: React.MouseEvent):void => {
     e?.preventDefault();
     setSelectedTaskId(taskId);
   }
 
-  const openModal = (content: JSX.Element) => {
+  const openModal = (content: JSX.Element):void => {
     setModalContent(content);
     setIsOpen(true);
   };

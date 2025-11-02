@@ -10,14 +10,14 @@ interface ChangePasswordProps {
 const ChangePassword: React.FC<ChangePasswordProps> = ({ setIsOpen, showToast }) => {
   const { user, setUser } = useUser();
 
-  const [currentPass, setCurrentPass] = useState("");
-  const [newPass, setNewPass] = useState("");
-  const [confirmPass, setConfirmPass] = useState("");
-  const [showCurrent, setShowCurrent] = useState(false);
-  const [showNew, setShowNew] = useState(false);
-  const [showConfirm, setShowConfirm] = useState(false);
+  const [currentPass, setCurrentPass] = useState<string>("");
+  const [newPass, setNewPass] = useState<string>("");
+  const [confirmPass, setConfirmPass] = useState<string>("");
+  const [showCurrent, setShowCurrent] = useState<boolean>(false);
+  const [showNew, setShowNew] = useState<boolean>(false);
+  const [showConfirm, setShowConfirm] = useState<boolean>(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent):void => {
     e.preventDefault();
 
     if (!currentPass || !newPass || !confirmPass) {

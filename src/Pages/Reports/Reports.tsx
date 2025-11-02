@@ -34,7 +34,7 @@ const Reports = () => {
                     !..نمای کلی عملکرد مدیریت وظایف شما
                 </p>
             </div>
-            <div className="w-[70%] flex justify-between items-start">
+            <div className="w-full lg:w-[70%] flex justify-between items-start">
                 {toDos.map((item,index)=>(
                     <div key={index} className="flex flex-col justify-start item-center gap-1">
                         <p className="text-[#6B7280] text-[13px]">{item.title}</p>
@@ -51,7 +51,7 @@ const Reports = () => {
             <div className="flex justify-between items-start">
                 <div className="flex flex-col justify-start items-end gap-10">
                     <p className="text-[#2C3E50] text-[23px]">نرخ تکمیل وظایف</p>
-                    <div className="flex flex-col justify-center items-end gap-3 mx-10">
+                    <div className="w-full flex flex-col justify-center items-center lg:items-end gap-3 mx-10">
                         <div
                         className="w-[250px] h-[250px] rounded-full flex justify-center items-center"
                         style={{

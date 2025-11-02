@@ -25,7 +25,7 @@ const Footer=()=>{
 
 
     return(
-        <div className="w-[75%] py-5 flex justify-between items-center">
+        <div className="w-[90%] lg:w-[75%] py-5 flex justify-between items-center">
             <div className="flex flex-row-reverse gap-5">
                 {socialLinks.map((item, index) => (
                     <li className="cursor-pointer" key={index}>

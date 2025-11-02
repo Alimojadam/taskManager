@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useTasks } from "../../Context/TaskContext/useTasks";
-import { useUser } from "../../Context/userContext/UseUser";
-import type { Task } from "../../Context/TaskContext/TaskContext";
+import { useTasks } from "../../Pages/Context/TaskContext/useTasks";
+import { useUser } from "../../Pages/Context/userContext/UseUser";
+import type { Task } from "../../Pages/Context/TaskContext/TaskContext";
 
 interface AddTaskProps {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -11,10 +11,10 @@ interface AddTaskProps {
 const AddTask: React.FC<AddTaskProps> = ({ setIsOpen, showToast }) => {
     const { tasks, setTasks } = useTasks();
     const { user, setUser } = useUser();
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
+    const [title, setTitle] = useState<string>("");
+    const [description, setDescription] = useState<string>("");
     const [priority, setPriority] = useState<Task["priority"]>("medium");
-    const [dueDate, setDueDate] = useState(""); 
+    const [dueDate, setDueDate] = useState<string>(""); 
 
     const priorityLabels: Record<"low" | "medium" | "high", string> = {
         low: "پایین",
@@ -22,7 +22,7 @@ const AddTask: React.FC<AddTaskProps> = ({ setIsOpen, showToast }) => {
         high: "بالا",
     };
 
-    const handleAdd = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleAdd = (e: React.FormEvent<HTMLFormElement>):void => {
         e.preventDefault();
 
         if (!title.trim()) {

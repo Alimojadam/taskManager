@@ -18,16 +18,16 @@ const statusLabels: Record<'pending' | 'in-progress' | 'completed', string> = {
 
 const ChangeStatus = ({ task, setIsOpen, showToast }: ChangeStatusProps) => {
   const [selectedStatus, setSelectedStatus] = useState<'pending' | 'in-progress' | 'completed'>(task.status);
-  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState<boolean>(false);
   const {updateTask}= useTasks();
 
-  const handleChange = (status: 'pending' | 'in-progress' | 'completed') => {
+  const handleChange = (status: 'pending' | 'in-progress' | 'completed'):void => {
     updateTask(task.taskId, "status", status);
     setIsOpen(false);
     setShowConfirmation(true);
     showToast(`وضعیت به ${statusLabels[status]} تغییر یافت`, "success");
     setTimeout(() => setShowConfirmation(false), 1500);
-};
+  };
 
 
   return (
