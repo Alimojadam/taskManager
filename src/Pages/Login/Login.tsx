@@ -68,7 +68,7 @@ const Login = () => {
           <p className="text-[#6B7280] text-[14px]">برای ادامه وارد حساب کاربری خود شوید</p>
         </div>
         <div className="w-full flex flex-col justify-center items-center gap-2">
-          <div className="w-[50%] flex flex-col justify-center items-end gap-2">
+          <div className="w-[60%] lg:w-[50%] flex flex-col justify-center items-end gap-2">
             <label className="text-[#6B7280]" htmlFor="">ایمیل</label>
             <input dir="rtl" className="w-full h-[30px] bg-transparent px-[5px] outline-none border border-[#B0B8C1] rounded-[5px] text-[#2C3E50]"
               placeholder="yourExampleEmail@email.com"
@@ -77,7 +77,7 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="w-[50%] flex flex-col justify-center items-end gap-2">
+          <div className="w-[60%] lg:w-[50%] flex flex-col justify-center items-end gap-2">
             <div className="w-full flex flex-row-reverse justify-between items-center">
               <label className="text-[#6B7280]" htmlFor="">رمز عبور</label>
               <p className="text-[#4A90E2] text-[14px] cursor-pointer">رمز عبور را فراموش کرده‌اید؟</p>
@@ -95,7 +95,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <button type="submit" className="w-1/2 h-8 bg-[#4A90E2] text-[#FFFFFF] font-bold rounded flex items-center justify-center cursor-pointer">
+        <button type="submit" className="w-[60%] lg:w-[50%] w-1/2 h-8 bg-[#4A90E2] text-[#FFFFFF] font-bold rounded flex items-center justify-center cursor-pointer">
           ورود
         </button>
         <p onClick={handleSignUpNavigate} className="text-[#4A90E2] cursor-pointer text-[15px] mt-2">حساب کاربری ندارید؟</p>

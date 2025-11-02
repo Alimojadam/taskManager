@@ -25,15 +25,15 @@ const Footer=()=>{
 
 
     return(
-        <div className="w-[90%] lg:w-[75%] py-5 flex justify-between items-center">
-            <div className="flex flex-row-reverse gap-5">
+        <div className="w-full lg:w-[75%] py-5 flex justify-between items-center px-5 lg:px-0 gap-5 lg:gap-0">
+            <div className="flex flex-row-reverse gap-[18px] lg:gap-5">
                 {socialLinks.map((item, index) => (
                     <li className="cursor-pointer" key={index}>
                         <i className={item.iconClass + " text-xl"}></i>
                     </li>
                 ))}
             </div>
-            <div className="flex flex-row-reverse gap-5">
+            <div className="flex flex-row-reverse gap-[16px] lg:gap-5">
                 {titleLinks.map((item, index) => (
                     <li className="cursor-pointer" key={index}>
                         <p className="text-[17px] text-[#2C3E50]">{item.title}</p>

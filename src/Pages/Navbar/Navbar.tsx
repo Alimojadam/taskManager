@@ -14,7 +14,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsOpen, isOpen }) => {
         setIsOpen(!isOpen);
     };
     return(
-        <div className="relative w-full flex flex-row-reverse justify-between shadow-sm shadow-[#F5F7FA] px-10 py-3 items-center m-0 p-0 border-b border-[#F5F7FA]">
+        <div className="relative w-full flex flex-row-reverse justify-between shadow-sm shadow-[#F5F7FA] pr-10 lg:px-10 py-3 items-center m-0 p-0 border-b border-[#F5F7FA]">
                 {isOpen ? <i onClick={handleToggle} className="bi bi-x absolute cursor-pointer top-1/2 -translate-y-1/2 right-3 text-[#6B7280] text-[30px] block lg:hidden"></i>
                         : <i onClick={handleToggle} className="bi bi-list absolute cursor-pointer top-1/2 -translate-y-1/2 right-3 text-[#6B7280] text-[30px] block lg:hidden"></i>    
             }

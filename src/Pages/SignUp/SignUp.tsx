@@ -81,7 +81,7 @@ const SignUp = () => {
           <p className="text-[#6B7280] text-[14px]">برای ادامه حساب کاربری بسازید</p>
         </div>
         <div className="w-full flex flex-col justify-center items-center gap-2">
-          <div className="w-[50%] flex flex-col justify-center items-end gap-2">
+          <div className="w-[60%] lg:w-[50%] flex flex-col justify-center items-end gap-2">
             <label className="text-[#6B7280]" htmlFor="">
               نام و نام خانوادگی
             </label>
@@ -93,7 +93,7 @@ const SignUp = () => {
               onChange={(e) => setName(e.target.value)}
             />
           </div>
-          <div className="w-[50%] flex flex-col justify-center items-end gap-2">
+          <div className="w-[60%] lg:w-[50%] flex flex-col justify-center items-end gap-2">
             <label className="text-[#6B7280]" htmlFor="">
               ایمیل
             </label>
@@ -106,7 +106,7 @@ const SignUp = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="w-[50%] flex flex-col justify-center items-end gap-2">
+          <div className="w-[60%] lg:w-[50%] flex flex-col justify-center items-end gap-2">
             <label className="text-[#6B7280]" htmlFor="">
               رمز عبور
             </label>
@@ -124,7 +124,7 @@ const SignUp = () => {
               ></i>
             </div>
           </div>
-          <div className="w-[50%] flex flex-col justify-center items-end gap-2">
+          <div className="w-[60%] lg:w-[50%] flex flex-col justify-center items-end gap-2">
             <label className="text-[#6B7280]" htmlFor="">
               تکرار رمز عبور
             </label>
@@ -145,7 +145,7 @@ const SignUp = () => {
         </div>
         <button
           type="submit"
-          className="w-1/2 h-8 bg-[#4A90E2] text-[#FFFFFF] font-bold rounded flex items-center justify-center cursor-pointer"
+          className="w-[60%] lg:w-[50%] w-1/2 h-8 bg-[#4A90E2] text-[#FFFFFF] font-bold rounded flex items-center justify-center cursor-pointer"
         >
           ایجاد حساب
         </button>

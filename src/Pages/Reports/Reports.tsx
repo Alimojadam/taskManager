@@ -48,10 +48,10 @@ const Reports = () => {
                 ))}
             </div>
             <div className="w-full border-t border-[#B0B8C1]"></div>
-            <div className="flex justify-between items-start">
-                <div className="flex flex-col justify-start items-end gap-10">
+            <div className="w-full flex justify-between items-start">
+                <div className="w-full flex flex-col justify-start items-end gap-10">
                     <p className="text-[#2C3E50] text-[23px]">نرخ تکمیل وظایف</p>
-                    <div className="w-full flex flex-col justify-center items-center lg:items-end gap-3 mx-10">
+                    <div className="w-full flex flex-col justify-center items-center lg:items-end gap-3 lg:mx-10">
                         <div
                         className="w-[250px] h-[250px] rounded-full flex justify-center items-center"
                         style={{
