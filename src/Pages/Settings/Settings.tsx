@@ -60,7 +60,7 @@ const Settings = () => {
         <div className="w-full flex flex-row-reverse justify-start items-start gap-5">
           <div className="w-[80px] h-[80px] rounded-full">
             <img
-              src={user.profilIMG || "src/assets/user.png"}
+              src={user.profilIMG || "/assets/user.png"}
               alt=""
               className="w-full h-full rounded-full object-cover"
             />
